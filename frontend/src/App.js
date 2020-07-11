@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Navigation />
 
-      <Route path="/" component={NotesList} />
+      <Route path="/" exact component={NotesList} />
       <Route path="/edit/:id" component={CreateNote} />
       <Route path="/create" component={CreateNote} />
       <Route path="/user" component={CreateUser} />
