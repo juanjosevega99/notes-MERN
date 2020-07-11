@@ -1,18 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 
-import Navigation from './components//CreateNote'
-import Navigation from './components/CreateUser'
+import CreateNote from './components/CreateNote'
+import CreateUser from './components/CreateUser'
 import Navigation from './components/Navigation'
-import Navigation from './components/NotesList'
+import NotesList from './components/NotesList'
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navigation />
 
-      Hello World
-    </div>
+      <Route path="/" component={NotesList} />
+      <Route path="/edit/:id" component={CreateNote} />
+      <Route path="/create" component={CreateNote} />
+      <Route path="/user" component={CreateUser} />
+    </Router>
   );
 }
 
