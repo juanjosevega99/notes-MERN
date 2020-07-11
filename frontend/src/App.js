@@ -1,10 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Navigation from './components//CreateNote'
+import Navigation from './components/CreateUser'
+import Navigation from './components/Navigation'
+import Navigation from './components/NotesList'
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Navigation />
+
       Hello World
     </div>
   );
