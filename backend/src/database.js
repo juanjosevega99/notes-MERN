@@ -6,7 +6,7 @@ const URI = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}.mongodb.net/${dbNam
 mongoose.connect(URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  // useFindAndModify: false
+  useFindAndModify: false
 })
 
 const connection = mongoose.connection
