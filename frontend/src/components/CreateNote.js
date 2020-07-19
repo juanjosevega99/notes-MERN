@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 export default class CreateNote extends Component {
 
   state = {
     users: [],
-    userSelected: ''
+    userSelected: '',
+    title: '',
+    content: '',
+    date: new Date()
   }
 
   async componentDidMount() {
@@ -19,8 +24,12 @@ export default class CreateNote extends Component {
 
   onInputChange = e => {
     this.setState({
-      userSelected: e.target.value
+      [e.target.name]: e.target.value
     })
+  }
+
+  onChangeDate = date => {
+    this.setState({ date })
   }
 
   render() {
@@ -74,13 +83,14 @@ export default class CreateNote extends Component {
             </div>
             {/* Note Date */}
             <div className="form-group">
-
+              <DatePicker
+                className="form-control"
+                selected={this.state.date}
+                onChange={this.onChangeDate}
+              />
             </div>
             <button className="btn btn-primary">
               Save
-              <i className="material-icons">
-                assignment
-              </i>
             </button>
           </form>
         </div>
