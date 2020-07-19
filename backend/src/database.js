@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const { dbUser, dbPassword, dbHost, dbName } = require('../config')
 
 const URI = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}.mongodb.net/${dbName}?retryWrites=true&w=majority`
 
