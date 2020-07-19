@@ -12,8 +12,10 @@ export default class CreateUser extends Component {
     this.setState({ users: res.data })
   }
 
-  onChangeUserName = () => {
-
+  onChangeUserName = (e) => {
+    this.setState({
+      username: e.target.value
+    })
   }
 
   render() {
