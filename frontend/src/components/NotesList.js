@@ -31,8 +31,11 @@ export default class NotesList extends Component {
           this.state.notes.map(note => (
             <div className="col-md-4 p-2" key={note._id}>
               <div className="card">
-                <div className="card-header">
+                <div className="card-header d-flex justify-content-between">
                   <h5>{note.title}</h5>
+                  <button className="btn btn-secondary">
+                    Edit
+                  </button>
                 </div>
                 <div className="card-body">
                   <p>{note.content}</p>
